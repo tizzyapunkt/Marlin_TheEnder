@@ -172,14 +172,17 @@
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN                       P2_03  // EXTRUDER 0
-#define HEATER_1_PIN                       P2_04  // EXTRUDER 1
-#define HEATER_BED_PIN                     P2_05  // BED
-#define FAN_PIN                            P2_01
-#define FAN1_PIN                           P2_02
 
+// Heaters
+#define HEATER_0_PIN                       P2_03  // EXTRUDER 0
+// #define HEATER_1_PIN                       P2_04  // EXTRUDER 1, switchted in favor of motherboard cooling fan
+#define HEATER_BED_PIN                     P2_05  // BED
+
+// Fans
+#define FAN_PIN                            P2_01  // Part Cooling
+#define FAN1_PIN                           P2_02  // Hotend
 #ifndef CONTROLLER_FAN_PIN
-  #define CONTROLLER_FAN_PIN            FAN1_PIN
+  #define CONTROLLER_FAN_PIN               P2_04  // Motherboard Cooling Fan, was HEATER_1_PIN before
 #endif
 
 /**
